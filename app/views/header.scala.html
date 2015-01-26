@@ -1,0 +1,22 @@
+<!-- Fixed navbar -->
+<nav class="navbar navbar-inverse" ng-controller="menus">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">POS System</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav pull-right">
+                <li class="{{ appMenu.home }}"><a href="#" ng-click="setActive('home')">Home</a></li>
+                <li class="{{ appMenu.user }}"><a href="#user" ng-click="setActive('user')">User</a></li>
+                <li class="{{ appMenu.favorite }}"><a href="#favorite" ng-click="setActive('favorite')">Favorites</a></li>
+                <li class="{{ appMenu.admin }}"><a href="#admin" ng-click="setActive('admin')">Admin</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>

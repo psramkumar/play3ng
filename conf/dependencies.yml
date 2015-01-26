@@ -1,0 +1,10 @@
+
+   - play.module -> lombok 1.2.3
+   - org.projectlombok -> lombok 1.14.8 (or any version of Lombok you want)
+
+repositories:
+  - play-modules :
+        type:       http
+        artifact:   "http://play-modules.herokuapp.com/zips/[module]-[revision].zip"
+        contains:
+                    - play.module -> *

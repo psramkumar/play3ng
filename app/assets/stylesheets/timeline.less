@@ -1,0 +1,287 @@
+.tabular .timeline > li .timeline-header,
+.tabular .timeline > li .timeline-footer{
+  border-collapse: collapse;
+}
+
+.timeline > li .timeline-header:before,
+.timeline > li .timeline-header:after,
+.timeline > li .timeline-footer:before,
+.timeline > li .timeline-footer:after{
+  content: " ";
+  display: table;
+}
+
+.timeline > li .timeline-header:after,
+.timeline > li .timeline-footer:after{
+  clear: both;
+}
+
+.timeline-month {
+  margin-top: 0px;
+  margin-bottom: 20px;
+  width: 120px;
+  text-align: center;
+  position: relative;
+  left: 6%;
+  margin-left: -55px;
+}
+.timeline-month span {
+  display: block;
+}
+.timeline-month .month {
+  font-size: 17px;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.timeline-month .year {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.timeline {
+  padding-left: 0;
+  list-style: none;
+  position: relative;
+}
+.timeline:before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  bottom: 0;
+  width: 2px;
+  background: #e6eaed;
+  left: 6%;
+  margin-left: 2px;
+}
+.timeline > li {
+  position: relative;
+}
+.timeline > li .timeline-header {
+  padding: 0;
+  color: #cbd6d6;
+}
+.timeline > li .timeline-header span.date {
+  float: left;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 12px;
+}
+.timeline > li .timeline-header span.author {
+  float: right;
+  font-size: 12px;
+  display: none;
+}
+.timeline > li .timeline-header + p {
+  padding-top: 10px;
+}
+.timeline > li .timeline-icon {
+  width: 50px;
+  height: 50px;
+  font-size: 1.4em;
+  line-height: 50px;
+  -webkit-font-smoothing: antialiased;
+  position: absolute;
+  color: #93a8a8;
+  background: #e6eaed;
+  border-radius: 50%;
+  text-align: center;
+  left: 6%;
+  top: 0;
+  margin: 0 0 0 -22px;
+  padding: 0;
+}
+.timeline > li .timeline-body {
+  margin: 0 0 20px 14%;
+  padding: 20px;
+  position: relative;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 3px;
+  background-color: #fff;
+}
+.timeline > li .timeline-body .timeline-content p {
+  margin-bottom: 0;
+}
+.timeline > li .timeline-body .timeline-content p + p {
+  margin-top: 10px;
+}
+.timeline > li .timeline-body:after {
+  right: 100%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: transparent;
+  border-width: 10px;
+  top: 15px;
+}
+.timeline > li .timeline-body img {
+  margin: 5px 20px 0 0;
+}
+.timeline > li .timeline-footer {
+  padding-top: 20px;
+  color: #fff;
+}
+@media (max-width: 991px) {
+  .timeline-month {
+    width: 100%;
+    text-align: center;
+    margin-left: 0;
+    left: 0;
+  }
+  .timeline:before {
+    width: 0;
+    left: 0;
+  }
+  .timeline > li {
+    margin-top: 20px;
+  }
+  .timeline > li:first-child {
+    margin-top: 0;
+  }
+  .timeline > li .timeline-body {
+    margin: 0 !important;
+  }
+  .timeline > li .timeline-body:after {
+    border-width: 0;
+  }
+  .timeline > li .timeline-icon {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 1em;
+    margin: 20px 50px 0 0;
+    position: relative;
+    float: right;
+  }
+}
+.timeline-primary .timeline-body {
+  border-color: #3498db;
+}
+.timeline-primary .timeline-body:after {
+  border-right-color: #3498db !important;
+}
+.timeline-primary .timeline-time {
+  color: #3498db;
+}
+.timeline-warning .timeline-body {
+  border-color: #f1c40f;
+}
+.timeline-warning .timeline-body:after {
+  border-right-color: #f1c40f !important;
+}
+.timeline-warning .timeline-time {
+  color: #f1c40f;
+}
+.timeline-danger .timeline-body {
+  border-color: #e74c3c;
+}
+.timeline-danger .timeline-body:after {
+  border-right-color: #e74c3c !important;
+}
+.timeline-danger .timeline-time {
+  color: #e74c3c;
+}
+.timeline-success .timeline-body {
+  border-color: #2ecc71;
+}
+.timeline-success .timeline-body:after {
+  border-right-color: #2ecc71 !important;
+}
+.timeline-success .timeline-time {
+  color: #2ecc71;
+}
+.timeline-info .timeline-body {
+  border-color: #3bbfb4;
+}
+.timeline-info .timeline-body:after {
+  border-right-color: #3bbfb4 !important;
+}
+.timeline-info .timeline-time {
+  color: #3bbfb4;
+}
+.timeline-inverse .timeline-body {
+  border-color: #95a5a6;
+}
+.timeline-inverse .timeline-body:after {
+  border-right-color: #95a5a6 !important;
+}
+.timeline-inverse .timeline-time {
+  color: #95a5a6;
+}
+.timeline-brown .timeline-body {
+  border-color: #c0392b;
+}
+.timeline-brown .timeline-body:after {
+  border-right-color: #c0392b !important;
+}
+.timeline-brown .timeline-time {
+  color: #c0392b;
+}
+.timeline-indigo .timeline-body {
+  border-color: #7863bc;
+}
+.timeline-indigo .timeline-body:after {
+  border-right-color: #7863bc !important;
+}
+.timeline-indigo .timeline-time {
+  color: #7863bc;
+}
+.timeline-orange .timeline-body {
+  border-color: #e67e22;
+}
+.timeline-orange .timeline-body:after {
+  border-right-color: #e67e22 !important;
+}
+.timeline-orange .timeline-time {
+  color: #e67e22;
+}
+.timeline-sky .timeline-body {
+  border-color: #82c4e6;
+}
+.timeline-sky .timeline-body:after {
+  border-right-color: #82c4e6 !important;
+}
+.timeline-sky .timeline-time {
+  color: #82c4e6;
+}
+.timeline-midnightblue .timeline-body {
+  border-color: #34495e;
+}
+.timeline-midnightblue .timeline-body:after {
+  border-right-color: #34495e !important;
+}
+.timeline-midnightblue .timeline-time {
+  color: #34495e;
+}
+.timeline-magenta .timeline-body {
+  border-color: #e73c68;
+}
+.timeline-magenta .timeline-body:after {
+  border-right-color: #e73c68 !important;
+}
+.timeline-magenta .timeline-time {
+  color: #e73c68;
+}
+.timeline-green .timeline-body {
+  border-color: #37bf8d;
+}
+.timeline-green .timeline-body:after {
+  border-right-color: #37bf8d !important;
+}
+.timeline-green .timeline-time {
+  color: #37bf8d;
+}
+.timeline-purple .timeline-body {
+  border-color: #e044ab;
+}
+.timeline-purple .timeline-body:after {
+  border-right-color: #e044ab !important;
+}
+.timeline-purple .timeline-time {
+  color: #e044ab;
+}

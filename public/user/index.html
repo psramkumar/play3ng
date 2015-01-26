@@ -1,0 +1,84 @@
+<section id="wrapper" class="panel panel-success">
+    <!-- Modal -->
+    <ng-include src="baseURL+'/user/template.tpl'"></ng-include>
+    <!-- modal End -->
+    <div class="panel-heading">
+        <h2 class="panel-title">{{ pageName }}</h2>
+    </div>
+    <div class="panel-body page-wrapper">
+        <div class="col-sm-3" style="padding: 0px;">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Roles</h2>
+                </div>
+                <div class="panel-body">
+                    <nav class="navbar-default navbar-static-side" role="navigation">
+                        <!-- sidebar-collapse -->
+                        <div class="sidebar-collapse">
+                            <!-- side-menu -->
+                            <ul class="nav" id="side-menu">
+                                <li>
+                                    <div class="table-responsive" style="overflow: auto; height: 300px;">
+                                        <table class="table table-striped table-bordered table-hover">
+                                            <thead>
+                                                <tr><th style="width: 40%">
+                                                    <div class="input-group custom-search-form">
+                                                        <input type="text" class="form-control" ng-model="searchDoc" placeholder="Search...">
+                                                        <span class="input-group-btn">
+                                                            <button class="btn btn-default" type="button">
+                                                                <i class="fa fa-search"></i>
+                                                            </button>
+                                                        </span>
+                                                    </div>
+                                                </th></tr>
+                                            </thead>
+                                            <tr ng-repeat="doc in userRoles | filter: searchDoc">
+                                                <td>{{doc.name }}</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-9" style="padding-right: 0px;">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h2 class="panel-title">User Management</h2>
+                    <div class="pull-right">
+                        <div class="btn-group">
+                            <button ng-click="open('lg')" type="button" class="btn btn-success" style="top: -25px;">Add New</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div ng-hide="userList.length > 0">No item to display</div>
+                    <table tr-ng-grid="" items="userList" class="table table-bordered table-hover table-striped"
+                           enable-filtering="true" enable-sorting="true"
+                           page-items="25" total-items="totalCount"
+                           current-page="0" selection-mode="single" ng-show="userList.length > 0">
+                        <thead><tr>
+                            <th display-name="Name" field-name="name" enable-sorting="false" enable-filtering="false" cell-width="100px !important;"></th>
+                            <th display-name="First Name" field-name="firstName" enable-sorting="true" enable-filtering="false"> </th>
+                            <th display-name="Last Name" field-name="lastName" enable-sorting="true" enable-filtering="false"> </th>
+                            <th display-name="Action" ><div class="tr-ng-title" cell-width="100">Action</div></th>
+                        </tr></thead>
+                        <tbody><tr><td>
+                            <div class="btn-toolbar" role="toolbar">
+                                <button type="button" class="btn btn-success" ng-click="open('lg', gridItem)" role="button">
+                                    <i class="fa fa-edit"></i>
+                                </button>
+                                <button type="button" class="btn btn-warning" ng-click="remove(gridItem.id)" role="button">
+                                    <i class="fa fa-trash"></i>
+                                </button>
+                            </div>
+                        </td></tr></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

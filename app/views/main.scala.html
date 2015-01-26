@@ -1,0 +1,64 @@
+
+@(title: String)(content: Html)
+<!DOCTYPE html>
+<!--manifest='@routes.Assets.at("cache.manifest")'-->
+<html ng-app="webApp" >
+    <head>
+        <title>@title</title>
+        <link rel="shortcut icon" type="image/png" href='@routes.Assets.at("images/favicon.png")'>
+
+        <link rel='stylesheet' href='@routes.WebJarAssets.at(WebJarAssets.locate("bootstrap.min.css"))'>
+        <link rel='stylesheet' href='@routes.WebJarAssets.at(WebJarAssets.locate("font-awesome.min.css"))'>
+        <link rel='stylesheet' href='@routes.WebJarAssets.at(WebJarAssets.locate("fullcalendar.css"))'>
+        <link rel='stylesheet' href='@routes.WebJarAssets.at(WebJarAssets.locate("fullcalendar.print.css"))'>
+
+        <link rel="stylesheet" href='@routes.Assets.at("stylesheets/main.css")'>
+
+    </head>
+    <body class="body-Login-back" ng-cloak>
+        <section id="container">
+        @content
+        </section>
+
+        <section id="javascripts">
+
+            <script type='text/javascript' src='@routes.WebJarAssets.at(WebJarAssets.locate("jquery.min.js"))'></script>
+            <script type='text/javascript' src='@routes.WebJarAssets.at(WebJarAssets.locate("moment.min.js"))'></script>
+            <script type='text/javascript' src='@routes.WebJarAssets.at(WebJarAssets.locate("angular.min.js"))'></script>
+            <script type='text/javascript' src='@routes.WebJarAssets.at(WebJarAssets.locate("angular-route.min.js"))'></script>
+            <script type='text/javascript' src='@routes.WebJarAssets.at(WebJarAssets.locate("angular-resource.min.js"))'></script>
+            <script type='text/javascript' src='@routes.WebJarAssets.at(WebJarAssets.locate("angular-animate.min.js"))'></script>
+            <script type='text/javascript' src='@routes.WebJarAssets.at(WebJarAssets.locate("ui-bootstrap.min.js"))'></script>
+            <script type='text/javascript' src='@routes.WebJarAssets.at(WebJarAssets.locate("ui-bootstrap-tpls.min.js"))'></script>
+
+
+            <script type='text/javascript' src='@routes.WebJarAssets.at(WebJarAssets.locate("fullcalendar.min.js"))'></script>
+            <script type='text/javascript' src='@routes.WebJarAssets.at(WebJarAssets.locate("gcal.js"))'></script>
+            <script type='text/javascript' src='@routes.WebJarAssets.at(WebJarAssets.locate("calendar.js"))'></script>
+
+            <script type='text/javascript' src='@routes.Assets.at("javascripts/flot/jquery.flot.js")'></script>
+            <script type='text/javascript' src='@routes.Assets.at("javascripts/flot/jquery.flot.tooltip.min.js")'></script>
+            <script type='text/javascript' src='@routes.Assets.at("javascripts/flot/jquery.flot.resize.js")'></script>
+            <script type='text/javascript' src='@routes.Assets.at("javascripts/flot/jquery.flot.pie.js")'></script>
+
+            <script type='text/javascript' src='@routes.Assets.at("javascripts/plugins/angular-slider.js")'></script>
+            <script type='text/javascript' src='@routes.Assets.at("javascripts/plugins/bootstrap-fileupload.js")'></script>
+            <script type='text/javascript' src='@routes.Assets.at("javascripts/plugins/calendar.js")' ></script>
+            <script type='text/javascript' src='@routes.Assets.at("javascripts/trNgGrid/trNgGrid.js")' ></script>
+            <script type='text/javascript' src='@routes.Assets.at("javascripts/plugins/jquery.inputmask.bundle.min.js")' ></script>
+
+            <script src="http://maps.googleapis.com/maps/api/js?sensor=true"></script>
+                <!--<script src="http://angulargm.herokuapp.com/angular-gm-0.3.1.min.js"></script>-->
+
+            <script type='text/javascript' src='@routes.Assets.at("javascripts/routeDirectory.js")' ></script>
+            <script type='text/javascript' src='@routes.Assets.at("javascripts/app.js")' ></script>
+            <script type='text/javascript' src='@routes.Assets.at("javascripts/appFactory.js")' ></script>
+
+
+            <script type='text/javascript' src='@routes.Assets.at("user/model.js")'></script>
+            <script type='text/javascript' src='@routes.Assets.at("user/controller.js")'></script>
+            <script type='text/javascript' src='@routes.Assets.at("user/service.js")'></script>
+
+        </section>
+    </body>
+</html>

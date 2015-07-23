@@ -1,10 +1,8 @@
 package com.triadic.nexgeno.test;
 
-import com.triadic.configs.Global;
-import com.triadic.nexgeno.services.GeoLocationFinderService;
+import com.triadic.configs.SpringAppConfig;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -16,11 +14,9 @@ import java.util.Map;
  *
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = Global.SpringAppConfig.class)
+@ContextConfiguration(classes = SpringAppConfig.class)
 public class SpringServiceUnitTest {
 
-    @Autowired
-    private GeoLocationFinderService geoLocationFinderService;
 
     @Test
     public void testGeoLocationInfoService(){
@@ -32,11 +28,7 @@ public class SpringServiceUnitTest {
             put("zipCode", "75252");
             put("country", "USA");
         }};
-        try {
-            System.out.println("geoLocationFinderService = " + geoLocationFinderService.getLocationForGivenAddress(map));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+
     }
 
     @Test

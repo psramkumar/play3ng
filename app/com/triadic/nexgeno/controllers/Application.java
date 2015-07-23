@@ -1,6 +1,8 @@
 package com.triadic.nexgeno.controllers;
 
 import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.triadic.nexgeno.models.User;
 import com.triadic.nexgeno.services.ApplicationServices;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,9 +57,12 @@ public class Application extends play.mvc.Controller {
 
         debug(source.toString());
 
-        String modelType = source.get("model").asText();
+        String modelType = source.get("modelName").asText();
 
-        if(equalsIgnoreCase("USER", modelType)) {
+        ObjectNode obj =(ObjectNode) source;
+        obj.remove("modelName");
+
+        if(equalsIgnoreCase(User.modelName, modelType)) {
             User  model = Json.fromJson(source, User.class);
             applicationServices.saveUpdateModel(model);
         }

@@ -1,18 +1,21 @@
-/*global angular, APP_MODULE_NAME, APPSERVICEURLS */
+/*global angular, myApp */
 
 (function () {
     'use strict';
-    angular.module(APP_MODULE_NAME).factory('db', ['$http', '$rootScope', function ($http, $rootScope) {
+    myApp.factory('db', ['$http', '$rootScope', 'appConfig', function ($http, $rootScope, config) {
         return {
             list: function (modelType, callMeBack) {
-                $http.get(APPSERVICEURLS.app_list_model_url, {
+                $http.get(config.APPSERVICEURLS.app_list_model_url, {
                     params: {
                         modelType: modelType
+                    },
+                    headers: {
+                        'Content-type': 'application/json'
                     }
                 }).then(callMeBack);
             },
             get: function (id, modelType, callMeBack) {
-                $http.get(APPSERVICEURLS.app_get_model_url, {
+                $http.get(config.APPSERVICEURLS.app_get_model_url, {
                     params: {
                         id: id,
                         modelType: modelType
@@ -23,10 +26,10 @@
                 if (!model.id) {
                     model.id = new Date().toISOString();
                 }
-                $http.post(APPSERVICEURLS.app_save_model_url, model).then(callMeBack);
+                $http.post(config.APPSERVICEURLS.app_save_model_url, model).then(callMeBack);
             },
             remove: function (id, modelType, callMeBack) {
-                $http.post(APPSERVICEURLS.app_remove_model_url, {
+                $http.post(config.APPSERVICEURLS.app_remove_model_url, {
                     params: {
                         id: id,
                         modelType: modelType

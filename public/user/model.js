@@ -11,7 +11,8 @@
             lastName: "",
             userName: '',
             password: '',
-            isActive: true,
+            active: true,
+            email: '',
             description: '',
             roles: []
         };
